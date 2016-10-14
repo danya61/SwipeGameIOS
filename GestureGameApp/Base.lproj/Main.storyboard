@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D2U-0x-eiB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Popover Controller-->
+        <scene sceneID="c4o-HD-D4Z">
+            <objects>
+                <viewController storyboardIdentifier="popover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jkG-Ol-oh4" customClass="PopoverController" customModule="GestureGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0WV-in-RWf"/>
+                        <viewControllerLayoutGuide type="bottom" id="NgL-6k-chU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SOT-xK-Wiu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backmenu" translatesAutoresizingMaskIntoConstraints="NO" id="MGi-B4-kvJ"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Try Again?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-GM-8F3">
+                                <frame key="frameInset" minX="16" minY="87" width="343" height="126.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="79"/>
+                                <color key="textColor" red="0.85345274209999999" green="0.95990806819999996" blue="0.87635529040000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcp-eO-azh">
+                                <frame key="frameInset" minX="25" minY="265" width="122" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" red="0.49930155277252197" green="0.94817203283309937" blue="0.13433587551116943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Kvm-Ub-xPc" kind="unwind" unwindAction="yesAnswerWithSender:" id="HdP-fe-dWQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpq-Ok-oUQ">
+                                <frame key="frameInset" minX="185" minY="265" width="157" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
+                                <state key="normal" title="No, go to menu">
+                                    <color key="titleColor" red="0.9152866005897522" green="0.24655312299728394" blue="0.20107686519622803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Kvm-Ub-xPc" kind="unwind" unwindAction="noAnswerWithSegue:" id="8Uf-4R-yNe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="RLL-0q-bVe">
+                                <frame key="frameInset" minX="29" minY="497" width="317" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="73"/>
+                                <color key="textColor" red="0.85345274209999999" green="0.95990806819999996" blue="0.87635529040000004" alpha="0.42443509615384617" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MGi-B4-kvJ" secondAttribute="trailing" id="H36-Tk-5gv"/>
+                            <constraint firstItem="NgL-6k-chU" firstAttribute="top" secondItem="MGi-B4-kvJ" secondAttribute="bottom" id="azN-gb-L7r"/>
+                            <constraint firstItem="MGi-B4-kvJ" firstAttribute="leading" secondItem="SOT-xK-Wiu" secondAttribute="leading" id="o7w-Ez-pYS"/>
+                            <constraint firstItem="MGi-B4-kvJ" firstAttribute="top" secondItem="SOT-xK-Wiu" secondAttribute="top" id="yOp-an-6Kz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nolabel" destination="Bpq-Ok-oUQ" id="Ni9-70-ObY"/>
+                        <outlet property="pointsLabel" destination="RLL-0q-bVe" id="ojX-Xe-GMd"/>
+                        <outlet property="yeslabel" destination="dcp-eO-azh" id="q6w-q2-hR0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9P8-Py-Ac2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Kvm-Ub-xPc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="324" y="-1009.7451274362819"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="WY7-5r-kxV">
+            <objects>
+                <viewController storyboardIdentifier="main" id="D2U-0x-eiB" customClass="MainMenuViewController" customModule="GestureGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fie-wl-85V"/>
+                        <viewControllerLayoutGuide type="bottom" id="zRk-A3-XsS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="76O-vU-rpb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backmenu" translatesAutoresizingMaskIntoConstraints="NO" id="u91-Bj-4lP">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQk-rJ-gNF">
+                                <frame key="frameInset" minX="16" minY="288" width="343" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
+                                <inset key="contentEdgeInsets" minX="-174" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Records">
+                                    <color key="titleColor" red="0.84737884998321533" green="0.95959478616714478" blue="0.87611657381057739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="J08-Ic-qC2" kind="presentation" id="m9v-yv-AEY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJB-Rd-eOr">
+                                <frame key="frameInset" minX="16" minY="48" width="343" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
+                                <inset key="contentEdgeInsets" minX="-182" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="  Time Play">
+                                    <color key="titleColor" red="0.90954297780990601" green="0.97226005792617798" blue="0.91658049821853638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="time" id="2Jh-FZ-zKP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zn-HQ-6gJ">
+                                <frame key="frameInset" minX="16" minY="399" width="343" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="0.87883454561233521" green="0.97010451555252075" blue="0.90774458646774292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVf-3r-cxe">
+                                <frame key="frameInset" minX="16" minY="166" width="343" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="40"/>
+                                <inset key="contentEdgeInsets" minX="123" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Mistake Play">
+                                    <color key="titleColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="mistake" id="mrf-YD-OhI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNO-Tg-Wp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324" y="-302.6986506746627"/>
+        </scene>
+        <!--Record Controller-->
+        <scene sceneID="wfc-16-IdE">
+            <objects>
+                <viewController id="J08-Ic-qC2" customClass="RecordController" customModule="GestureGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uXF-P8-ugn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z2n-XG-jaP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dIS-PL-qNe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backmenu" translatesAutoresizingMaskIntoConstraints="NO" id="3ya-zz-S6g">
+                                <gestureRecognizers/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mYB-dG-6Pv">
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <segments>
+                                    <segment title="Time Play"/>
+                                    <segment title="Mistake Play"/>
+                                </segments>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <connections>
+                                    <action selector="changeSeg:" destination="J08-Ic-qC2" eventType="valueChanged" id="lFH-T0-aVh"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4S-ah-1o3">
+                                <frame key="frameInset" minX="43" minY="163" width="72" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2. " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCE-k5-zdD">
+                                <frame key="frameInset" minX="43" minY="224" width="72" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-XW-rMr">
+                                <frame key="frameInset" minX="43" minY="285" width="72" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAp-Z1-gOY">
+                                <frame key="frameInset" minX="43" minY="346" width="72" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-Wp-mrC">
+                                <frame key="frameInset" minX="43" minY="407" width="72" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNE-nB-F8b">
+                                <frame key="frameInset" minX="156" minY="224" width="169" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0d-bH-xgC">
+                                <frame key="frameInset" minX="156" minY="285" width="169" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zv-3a-Btj">
+                                <frame key="frameInset" minX="156" minY="346" width="169" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3S-3k-7ko">
+                                <frame key="frameInset" minX="156" minY="407" width="169" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZM-Wf-kFX">
+                                <frame key="frameInset" minX="156" minY="163" width="169" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.85345274209976196" green="0.95990806818008423" blue="0.87635529041290283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fth-p5-tfb"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mYB-dG-6Pv" secondAttribute="trailing" constant="18" id="0aA-Mc-i9J"/>
+                            <constraint firstItem="Fth-p5-tfb" firstAttribute="top" secondItem="uXF-P8-ugn" secondAttribute="bottom" constant="549" id="6uk-U8-6tI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fth-p5-tfb" secondAttribute="trailing" constant="234" id="AUa-4l-fjN"/>
+                            <constraint firstItem="Fth-p5-tfb" firstAttribute="top" secondItem="3ya-zz-S6g" secondAttribute="bottom" constant="-98" id="CIh-OF-3E7"/>
+                            <constraint firstItem="Z2n-XG-jaP" firstAttribute="top" secondItem="Fth-p5-tfb" secondAttribute="bottom" constant="31" id="J6E-hF-TO3"/>
+                            <constraint firstItem="3ya-zz-S6g" firstAttribute="top" secondItem="dIS-PL-qNe" secondAttribute="top" id="PMk-Me-lE4"/>
+                            <constraint firstAttribute="trailing" secondItem="3ya-zz-S6g" secondAttribute="trailing" id="Wxo-KS-8Wd"/>
+                            <constraint firstItem="Z2n-XG-jaP" firstAttribute="top" secondItem="3ya-zz-S6g" secondAttribute="bottom" id="e1t-Gc-F9E"/>
+                            <constraint firstItem="mYB-dG-6Pv" firstAttribute="top" secondItem="uXF-P8-ugn" secondAttribute="bottom" constant="23" id="lRP-WP-OSD"/>
+                            <constraint firstItem="mYB-dG-6Pv" firstAttribute="leading" secondItem="dIS-PL-qNe" secondAttribute="leadingMargin" constant="19" id="nV4-1a-80k"/>
+                            <constraint firstItem="3ya-zz-S6g" firstAttribute="leading" secondItem="dIS-PL-qNe" secondAttribute="leading" id="php-kb-LD3"/>
+                            <constraint firstItem="Fth-p5-tfb" firstAttribute="leading" secondItem="dIS-PL-qNe" secondAttribute="leadingMargin" constant="18" id="v0R-Ho-sDh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="first" destination="jZM-Wf-kFX" id="ubh-N6-Gdd"/>
+                        <outlet property="fived" destination="o3S-3k-7ko" id="GJR-VY-n32"/>
+                        <outlet property="foured" destination="9Zv-3a-Btj" id="Ou0-C2-VSP"/>
+                        <outlet property="second" destination="mNE-nB-F8b" id="Jxg-Ka-yIk"/>
+                        <outlet property="segment" destination="mYB-dG-6Pv" id="pEk-Wg-MAz"/>
+                        <outlet property="str" destination="Fth-p5-tfb" id="f8e-ek-ccT"/>
+                        <outlet property="third" destination="J0d-bH-xgC" id="UhM-fY-RQJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFF-eB-FDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.6" y="-303.59820089955025"/>
+        </scene>
+        <!--Game Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="TimeGame" id="BYZ-38-t0r" customClass="GameController" customModule="GestureGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgr.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nJy-fQ-u7t">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsH-Tg-UvP">
+                                <frame key="frameInset" minX="8" minY="280" width="135" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNn-tt-MxI">
+                                <frame key="frameInset" minX="240" minY="280" width="126" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ukE-OZ-Ogg">
+                                <frame key="frameInset" minX="140" minY="385" width="104" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJE-Ev-gpA">
+                                <frame key="frameInset" minX="75" minY="27" width="132" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="52"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="''" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l80-vC-8wb">
+                                <frame key="frameInset" minX="221" minY="27" width="113" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="52"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-Zk-B7M">
+                                <frame key="frameInset" minX="140" minY="127" width="101" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJB-iB-2C2">
+                                <frame key="frameInset" width="54" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="pause.png"/>
+                                <connections>
+                                    <action selector="pausePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pr2-o2-ItF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="eH1-S9-dr4">
+                                <frame key="frameInset" minX="44" minY="575" width="287" height="83.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="52"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p2D-jS-z0T">
+                                <frame key="frameInset" minY="-1" width="375" height="668"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.023837000131607056" green="0.014087557792663574" blue="0.035042569041252136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="apLabel" destination="l80-vC-8wb" id="CiR-aQ-n6C"/>
+                        <outlet property="darkView" destination="p2D-jS-z0T" id="jfF-gq-uha"/>
+                        <outlet property="imageDown" destination="ukE-OZ-Ogg" id="iI0-e9-o6Q"/>
+                        <outlet property="imageLeft" destination="bsH-Tg-UvP" id="DHr-oZ-Hu9"/>
+                        <outlet property="imageRight" destination="SNn-tt-MxI" id="wff-ie-uKY"/>
+                        <outlet property="imageUp" destination="Gcx-Zk-B7M" id="go5-Zq-9Ji"/>
+                        <outlet property="myLab" destination="eH1-S9-dr4" id="FOh-LS-8iz"/>
+                        <outlet property="timeLabel" destination="tJE-Ev-gpA" id="uUa-ge-TFT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324" y="502.39880059970017"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backgr.jpg" width="640" height="960"/>
+        <image name="backmenu" width="213" height="307"/>
+        <image name="pause.png" width="128" height="128"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2Jh-FZ-zKP"/>
+    </inferredMetricsTieBreakers>
+</document>
