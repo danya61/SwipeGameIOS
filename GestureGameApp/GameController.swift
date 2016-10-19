@@ -1,4 +1,7 @@
 import UIKit
+import AVFoundation
+import AudioToolbox
+
 
 public func arc4random <T: ExpressibleByIntegerLiteral> (_ type: T.Type) -> T {
     var r: T = 0
@@ -31,12 +34,38 @@ class GameController: UIViewController {
         
     }
     
+    var pauseXib : myView? = nil
+    
     @IBAction func pausePressed(_ sender: AnyObject) {
         darkView.isHidden = false
-        let pauseXib = myView(frame: CGRect(x: 0 + (view.bounds.width - 340) / 2 , y: 0 + (view.bounds.height - 280) / 2, width: 340, height: 280))
-        view.addSubview(pauseXib)
+        pauseXib  = myView(frame: CGRect(x: 0 + (view.bounds.width - 340) / 2 , y: 0 + (view.bounds.height - 280) / 2, width: 340, height: 280))
+        pauseXib?.continueButton.addTarget(self, action: #selector(xibContinueTapped), for: UIControlEvents.touchUpInside)
+        view.addSubview(pauseXib!)
+        timer2.invalidate()
+        timer.invalidate()
     }
     
+    func xibContinueTapped(sender : UIButton){
+        hidePause()
+        darkView.isHidden = true
+    }
+    
+    private func hidePause() {
+        pauseXib?.removeFromSuperview()
+        pauseXib = nil
+        if imageRight.alpha == 1 {
+            BeginForNSec("Right")
+        } else if imageUp.alpha == 1{
+            BeginForNSec("Up")
+        } else if imageDown.alpha == 1 {
+            BeginForNSec("Down")
+        } else {
+            BeginForNSec("Left")
+        }
+        if gameType == "time"{
+            mainTimer()
+        }
+    }
     
     let sides = ["Left", "Right", "Up", "Down"]
     var timer = Timer()
@@ -93,6 +122,7 @@ class GameController: UIViewController {
         BeginForNSec()
     }
     
+    //timer2  -  отвечает за так называемый секундомер вверху
     func mainTimer(){
         if (levelTimeDefault > 0){
             timeLabel.text = String(levelTimeDefault)
@@ -110,34 +140,38 @@ class GameController: UIViewController {
             switch gestOpt.direction {
             case UISwipeGestureRecognizerDirection.right :
                 if imageRight.alpha == 1{
+                    AudioServicesPlaySystemSound(SystemSoundID(1109))
                     myLab.text = String(Int(myLab.text!)! + 1)}
                 else if gameType == "mistake" {
                     if imageRight.alpha == 0 {
-                        callStop()
+                        ifAlphaZeroMistakePress()
                     }
                 }
             case UISwipeGestureRecognizerDirection.left :
                 if imageLeft.alpha == 1{
+                    AudioServicesPlaySystemSound(SystemSoundID(1109))
                     myLab.text = String(Int(myLab.text!)! + 1)}
                 else if gameType == "mistake" {
                     if imageLeft.alpha == 0 {
-                        callStop()
+                        ifAlphaZeroMistakePress()
                     }
                 }
             case UISwipeGestureRecognizerDirection.up :
                 if imageUp.alpha == 1{
+                    AudioServicesPlaySystemSound(SystemSoundID(1109))
                     myLab.text = String(Int(myLab.text!)! + 1)}
             else if gameType == "mistake" {
                 if imageUp.alpha == 0 {
-                    callStop()
+                   ifAlphaZeroMistakePress()
                 }
             }
             case UISwipeGestureRecognizerDirection.down :
                 if imageDown.alpha == 1{
+                    AudioServicesPlaySystemSound(SystemSoundID(1109))
                     myLab.text = String(Int(myLab.text!)! + 1)}
             else if gameType == "mistake" {
                 if imageDown.alpha == 0 {
-                    callStop()
+                    ifAlphaZeroMistakePress()
                 }
             }
             default:
@@ -146,8 +180,19 @@ class GameController: UIViewController {
         }
     }
     
-    func callStop() {
+    func ifAlphaZeroMistakePress(){
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         timer.invalidate()
+        darkView.backgroundColor = UIColor.red
+        darkView.isHidden = false
+        timer2 = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(GameController.callStop), userInfo: nil, repeats: false)
+    }
+    
+    
+    func callStop() {
+        timer2.invalidate()
+        darkView.backgroundColor = UIColor.black
+        darkView.isHidden = true
         EndFlag = false
         stop()
     }
@@ -174,12 +219,17 @@ class GameController: UIViewController {
         default : break
         }
     }
+
     
-    
-    internal func BeginForNSec(){
+    internal func BeginForNSec(_ nameStr : String = "null"){
         if EndFlag {
             let timeSec = Float.random(0.33, upper: 1.0)
-            let nameOfStr = sides[Int(arc4random_uniform(4))]
+            var nameOfStr = "";
+            if nameStr == "null"{
+                nameOfStr = sides[Int(arc4random_uniform(4))]
+            } else {
+                nameOfStr = nameStr
+            }
             let name : String = nameOfStr
             setImage(nameOfStr)
             timer = Timer.scheduledTimer(timeInterval: TimeInterval(timeSec) , target: self, selector: #selector(GameController.Action), userInfo: name, repeats: false)
@@ -196,9 +246,13 @@ class GameController: UIViewController {
     func stop() {
         EndFlag = true
         let record = Record()
-        record.updateMistakeRecords(Int(myLab.text!)!)
+        if gameType == "mistake" {
+            record.updateMistakeRecords(Int(myLab.text!)!)
+        }
+        else if gameType == "time" {
+            record.updateTimeRecords(Int(myLab.text!)!)
+        }
         presentPopover()
-        
     }
     
     func presentPopover(){

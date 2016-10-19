@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GestureGameApp/GameController.swift"
-            timestampString = "498129710.058939"
+            timestampString = "498351713.128395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "pausePressed(_:)"
             landmarkType = "7">
          </BreakpointContent>

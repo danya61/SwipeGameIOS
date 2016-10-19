@@ -15,7 +15,35 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let def = UserDefaults.standard
+        if !def.bool(forKey: "FirstIn") {
+            def.set(true, forKey: "FirstIn")
+            makeNotification()
+        }
+    
+    }
+    
+    func makeNotification(){
+        var calendar = NSCalendar.current
+        let calc = NSDateComponents()
+        calc.hour = 4
+        calc.minute = 0
+        calc.second = 0
+        calendar.timeZone = NSTimeZone.default
+        let dataForce = calendar.date(from: calc as DateComponents)
+        
+        let notif = UILocalNotification()
+        if #available(iOS 8.2, *) {
+            notif.alertTitle = "Let's Play"
+        } else {
+        }
+        notif.alertBody = "We are waiting you"
+        notif.alertAction = "Go"
+        notif.soundName = UILocalNotificationDefaultSoundName
+        notif.alertLaunchImage = "playback"
+        notif.fireDate = dataForce
+        notif.repeatInterval = .weekday
+        UIApplication.shared.scheduleLocalNotification(notif)
     }
 
     override func didReceiveMemoryWarning() {

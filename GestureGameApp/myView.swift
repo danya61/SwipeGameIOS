@@ -13,6 +13,9 @@ class myView: UIView {
     var view : UIView!
     var nibName = "myView"
     
+    @IBOutlet weak var continueButton: UIButton!
+    
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         setup()
@@ -26,14 +29,12 @@ class myView: UIView {
     deinit {
     }
     
-    @IBAction func `continue`(_ sender: AnyObject) {
-    }
     
     
     func loadFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
-        var view2 = nib.instantiate(withOwner: self, options: nil).first as? UIView
+        let view2 = nib.instantiate(withOwner: self, options: nil).first as? UIView
         return view2
     }
     

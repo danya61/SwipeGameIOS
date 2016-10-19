@@ -6,7 +6,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="myView" customModule="GestureGameApp" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="myView" customModule="GestureGameApp" customModuleProvider="target">
+            <connections>
+                <outlet property="continueButton" destination="Bc4-pM-GBb" id="T7x-4v-w7L"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="WDk-q6-oZi">
             <rect key="frame" x="0.0" y="0.0" width="340" height="280"/>
@@ -17,20 +21,46 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bc4-pM-GBb">
-                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Isi-1W-fEh"/>
+                        <constraint firstAttribute="width" constant="148" id="X7y-wT-ZXn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="38"/>
                     <state key="normal" title="Continue">
                         <color key="titleColor" red="0.3803921569" green="0.84705882349999995" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
-                    <connections>
-                        <action selector="continue:" destination="-1" eventType="touchUpInside" id="x71-Gv-FIs"/>
-                    </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eP-mu-Nhm">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="161" id="wf9-rZ-cIU"/>
+                        <constraint firstAttribute="height" constant="60" id="yFe-L0-WMT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="34"/>
+                    <state key="normal" title="Exit">
+                        <color key="titleColor" red="0.9152866005897522" green="0.24655312299728394" blue="0.20107686519622803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause.png" translatesAutoresizingMaskIntoConstraints="NO" id="itg-Qq-nlf">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="147" id="NR3-vd-OMn"/>
+                        <constraint firstAttribute="width" constant="170" id="hvo-Us-xJs"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.93765264749526978" green="0.97929173707962036" blue="0.94810110330581665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Bc4-pM-GBb" firstAttribute="leading" secondItem="WDk-q6-oZi" secondAttribute="leading" constant="96" id="5XR-Th-qlC"/>
-                <constraint firstAttribute="bottom" secondItem="Bc4-pM-GBb" secondAttribute="bottom" constant="34" id="EK1-pw-cUK"/>
-                <constraint firstAttribute="trailing" secondItem="Bc4-pM-GBb" secondAttribute="trailing" constant="96" id="yO9-wM-8FE"/>
+                <constraint firstItem="4eP-mu-Nhm" firstAttribute="leading" secondItem="WDk-q6-oZi" secondAttribute="leading" constant="7" id="2Sb-iX-pMW"/>
+                <constraint firstItem="Bc4-pM-GBb" firstAttribute="top" secondItem="WDk-q6-oZi" secondAttribute="top" constant="200" id="4Gd-SH-1Mp"/>
+                <constraint firstAttribute="trailing" secondItem="itg-Qq-nlf" secondAttribute="trailing" constant="85" id="4fn-2e-Tbm"/>
+                <constraint firstItem="itg-Qq-nlf" firstAttribute="leading" secondItem="WDk-q6-oZi" secondAttribute="leading" constant="85" id="HpU-We-Cza"/>
+                <constraint firstItem="4eP-mu-Nhm" firstAttribute="top" secondItem="WDk-q6-oZi" secondAttribute="top" constant="200" id="JJX-Hx-jQc"/>
+                <constraint firstItem="Bc4-pM-GBb" firstAttribute="leading" secondItem="4eP-mu-Nhm" secondAttribute="trailing" constant="8" id="lIe-9M-JY6"/>
+                <constraint firstItem="itg-Qq-nlf" firstAttribute="top" secondItem="WDk-q6-oZi" secondAttribute="top" constant="45" id="lRo-fR-Tgu"/>
+                <constraint firstAttribute="bottom" secondItem="Bc4-pM-GBb" secondAttribute="bottom" constant="20" id="ndx-5z-ehD"/>
+                <constraint firstAttribute="bottom" secondItem="4eP-mu-Nhm" secondAttribute="bottom" constant="20" id="tLz-ZV-hNS"/>
+                <constraint firstAttribute="trailing" secondItem="Bc4-pM-GBb" secondAttribute="trailing" constant="16" id="wVE-iE-iWd"/>
+                <constraint firstItem="Bc4-pM-GBb" firstAttribute="leading" secondItem="4eP-mu-Nhm" secondAttribute="trailing" constant="8" id="yCn-Gh-4S6"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -39,5 +69,6 @@
     </objects>
     <resources>
         <image name="AppIcon" width="57" height="57"/>
+        <image name="pause.png" width="128" height="128"/>
     </resources>
 </document>
