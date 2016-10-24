@@ -10,6 +10,7 @@
 		0411E5211DAB915200818BD1 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411E5201DAB915200818BD1 /* pause.png */; };
 		041B4ADA1DA4F9D700CE5265 /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B4AD91DA4F9D700CE5265 /* RecordController.swift */; };
 		041B4ADC1DA55DF600CE5265 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B4ADB1DA55DF600CE5265 /* PopoverController.swift */; };
+		041E1A651DBEAC8F00A5F0D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E1A641DBEAC8F00A5F0D8 /* SettingsViewController.swift */; };
 		042110161D92919200C75071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042110151D92919200C75071 /* AppDelegate.swift */; };
 		0421101B1D92919200C75071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042110191D92919200C75071 /* Main.storyboard */; };
 		0421101D1D92919200C75071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0421101C1D92919200C75071 /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 		043F507C1DAEF1D60088DB6E /* myView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F507B1DAEF1D60088DB6E /* myView.swift */; };
 		047AB03D1DA436BF001B1509 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB03C1DA436BF001B1509 /* Record.swift */; };
 		048366511DB026DD00B1F143 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048366501DB026DD00B1F143 /* GameController.swift */; };
+		04D2EB441DBCBBD400C84CB9 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2EB431DBCBBD400C84CB9 /* ContentViewController.swift */; };
+		04D2EB461DBCC4E100C84CB9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2EB451DBCC4E100C84CB9 /* PageViewController.swift */; };
 		04D9317B1DA7B7E4004450A1 /* backgr.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04D9317A1DA7B7E4004450A1 /* backgr.jpg */; };
 		04D9317D1DA829E7004450A1 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9317C1DA829E7004450A1 /* MainMenuViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +33,7 @@
 		0411E5201DAB915200818BD1 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		041B4AD91DA4F9D700CE5265 /* RecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
 		041B4ADB1DA55DF600CE5265 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
+		041E1A641DBEAC8F00A5F0D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		042110121D92919200C75071 /* GestureGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		042110151D92919200C75071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0421101A1D92919200C75071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +48,8 @@
 		043F507B1DAEF1D60088DB6E /* myView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myView.swift; sourceTree = "<group>"; };
 		047AB03C1DA436BF001B1509 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		048366501DB026DD00B1F143 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		04D2EB431DBCBBD400C84CB9 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		04D2EB451DBCC4E100C84CB9 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		04D9317A1DA7B7E4004450A1 /* backgr.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgr.jpg; sourceTree = "<group>"; };
 		04D9317C1DA829E7004450A1 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +84,7 @@
 		042110141D92919200C75071 /* GestureGameApp */ = {
 			isa = PBXGroup;
 			children = (
+				04D2EB421DBCBBBF00C84CB9 /* tutorialClasses */,
 				042110321D92CEFC00C75071 /* classes */,
 				042110291D92B3A400C75071 /* pics */,
 				042110151D92919200C75071 /* AppDelegate.swift */,
@@ -112,8 +119,18 @@
 				04D9317C1DA829E7004450A1 /* MainMenuViewController.swift */,
 				043F50791DAEF1B90088DB6E /* myView.xib */,
 				043F507B1DAEF1D60088DB6E /* myView.swift */,
+				041E1A641DBEAC8F00A5F0D8 /* SettingsViewController.swift */,
 			);
 			name = classes;
+			sourceTree = "<group>";
+		};
+		04D2EB421DBCBBBF00C84CB9 /* tutorialClasses */ = {
+			isa = PBXGroup;
+			children = (
+				04D2EB431DBCBBD400C84CB9 /* ContentViewController.swift */,
+				04D2EB451DBCC4E100C84CB9 /* PageViewController.swift */,
+			);
+			name = tutorialClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,11 +213,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D2EB441DBCBBD400C84CB9 /* ContentViewController.swift in Sources */,
 				041B4ADA1DA4F9D700CE5265 /* RecordController.swift in Sources */,
 				042110161D92919200C75071 /* AppDelegate.swift in Sources */,
+				041E1A651DBEAC8F00A5F0D8 /* SettingsViewController.swift in Sources */,
 				047AB03D1DA436BF001B1509 /* Record.swift in Sources */,
 				048366511DB026DD00B1F143 /* GameController.swift in Sources */,
 				04D9317D1DA829E7004450A1 /* MainMenuViewController.swift in Sources */,
+				04D2EB461DBCC4E100C84CB9 /* PageViewController.swift in Sources */,
 				043F507C1DAEF1D60088DB6E /* myView.swift in Sources */,
 				041B4ADC1DA55DF600CE5265 /* PopoverController.swift in Sources */,
 			);

@@ -76,6 +76,69 @@
             </objects>
             <point key="canvasLocation" x="324" y="-1009.7451274362819"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="lXF-Nf-H0B">
+            <objects>
+                <pageViewController storyboardIdentifier="page" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FvM-qK-XKb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yTQ-av-7To" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="-1031"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="hKR-NS-QJW">
+            <objects>
+                <viewController storyboardIdentifier="parent" id="at8-rk-zDo" customClass="PageViewController" customModule="GestureGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u5u-NX-uwV"/>
+                        <viewControllerLayoutGuide type="bottom" id="x34-VZ-iMS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1z0-09-hVC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ghQ-4G-BwM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghX-v8-Cld" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2359" y="-1031"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="19t-Qn-6jY">
+            <objects>
+                <viewController storyboardIdentifier="tutorial" id="K0z-tC-TJ3" customClass="ContentViewController" customModule="GestureGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2X4-CB-zXg"/>
+                        <viewControllerLayoutGuide type="bottom" id="mZK-xN-6Yb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d03-4T-E0V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaB-Mr-Ot1">
+                                <frame key="frameInset" minX="16" minY="13" width="343" height="646"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-S3-LJn">
+                                <frame key="frameInset" minX="258" minY="28" width="85" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="cancell"/>
+                                <connections>
+                                    <segue destination="phM-yb-CPk" kind="unwind" unwindAction="noAnswerWithSegue:" id="Lw6-TV-foa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.019143266603350639" green="0.015367485582828522" blue="0.0082276957109570503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="TaB-Mr-Ot1" id="gWv-M2-5dO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvq-vW-NQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="phM-yb-CPk" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3085.5999999999999" y="-1031.3343328335832"/>
+        </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="WY7-5r-kxV">
             <objects>
@@ -121,6 +184,9 @@
                                 <state key="normal" title="Settings">
                                     <color key="titleColor" red="0.87883454561233521" green="0.97010451555252075" blue="0.90774458646774292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="DCH-s7-rDC" kind="show" id="OSu-rs-aj4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVf-3r-cxe">
                                 <frame key="frameInset" minY="166" width="375" height="103"/>
@@ -335,6 +401,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itk-dg-eVr">
+                                <frame key="frameInset" minX="300" minY="14" width="66" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="soundPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U3E-aZ-6Ox"/>
+                                </connections>
+                            </button>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2D-jS-z0T">
                                 <color key="backgroundColor" red="0.023837000131607056" green="0.014087557792663574" blue="0.035042569041252136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -360,6 +433,7 @@
                         <outlet property="imageRight" destination="SNn-tt-MxI" id="wff-ie-uKY"/>
                         <outlet property="imageUp" destination="Gcx-Zk-B7M" id="go5-Zq-9Ji"/>
                         <outlet property="myLab" destination="eH1-S9-dr4" id="FOh-LS-8iz"/>
+                        <outlet property="soundButton" destination="itk-dg-eVr" id="aiG-93-OeG"/>
                         <outlet property="timeLabel" destination="tJE-Ev-gpA" id="uUa-ge-TFT"/>
                     </connections>
                 </viewController>
@@ -367,10 +441,64 @@
             </objects>
             <point key="canvasLocation" x="324" y="502.39880059970017"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="2aU-4r-57y">
+            <objects>
+                <viewController id="DCH-s7-rDC" customClass="SettingsViewController" customModule="GestureGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="50d-LE-Cjt"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Fv-Fa-F7z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oge-WC-KGb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backmenu" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-xB-LfE"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip2-Ug-sRW">
+                                <frame key="frameInset" minX="16" minY="56" width="343" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="42"/>
+                                <state key="normal" title="Sound : On">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="soundChange:" destination="DCH-s7-rDC" eventType="touchUpInside" id="XS9-J1-uQp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlk-Md-D7C">
+                                <frame key="frameInset" minX="16" minY="146" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <state key="normal" title="Tutorial">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="at8-rk-zDo" kind="presentation" id="w4z-ru-uFn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2CA-xB-LfE" secondAttribute="trailing" id="5h2-qT-tzo"/>
+                            <constraint firstItem="0Fv-Fa-F7z" firstAttribute="top" secondItem="2CA-xB-LfE" secondAttribute="bottom" id="7rw-vR-88I"/>
+                            <constraint firstItem="2CA-xB-LfE" firstAttribute="leading" secondItem="oge-WC-KGb" secondAttribute="leading" id="Cu9-CW-sd0"/>
+                            <constraint firstItem="2CA-xB-LfE" firstAttribute="top" secondItem="oge-WC-KGb" secondAttribute="top" id="HjO-Gr-ZTg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bm2-ls-A1D"/>
+                    <connections>
+                        <outlet property="SoundButton" destination="Ip2-Ug-sRW" id="Qxs-Th-Mfi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wh-nR-STp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.6" y="501.49925037481262"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backgr.jpg" width="640" height="960"/>
         <image name="backmenu" width="213" height="307"/>
+        <image name="cancell" width="85" height="85"/>
         <image name="pause.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>

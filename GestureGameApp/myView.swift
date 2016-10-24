@@ -15,6 +15,8 @@ class myView: UIView {
     
     @IBOutlet weak var continueButton: UIButton!
     
+    @IBOutlet weak var exitButton: UIButton!
+    
     
     override init(frame: CGRect){
         super.init(frame: frame)

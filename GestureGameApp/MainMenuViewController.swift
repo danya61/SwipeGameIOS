@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MainMenuViewController: UIViewController {
 
     @IBAction func noAnswer(segue:UIStoryboardSegue) {
@@ -15,12 +16,17 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let def = UserDefaults.standard
         if !def.bool(forKey: "FirstIn") {
             def.set(true, forKey: "FirstIn")
             makeNotification()
+            let VC = self.storyboard?.instantiateViewController(withIdentifier: "parent")
+            self.present(VC!, animated: true, completion: nil)
         }
-    
     }
     
     func makeNotification(){

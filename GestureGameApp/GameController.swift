@@ -27,11 +27,24 @@ class GameController: UIViewController {
     
     @IBOutlet weak var darkView: UIView!
     
+    @IBOutlet weak var soundButton: UIButton!
+    
     @IBOutlet weak var apLabel: UILabel!
     var gameType : String = ""
     
     @IBAction func yesAnswer(sender: UIStoryboardSegue) {
         
+    }
+    
+    @IBAction func soundPressed(_ sender: AnyObject) {
+        if AppSound == true {
+            AppSound = false
+            soundButton.setImage(#imageLiteral(resourceName: "nosound"), for: .normal)
+        }
+        else {
+            AppSound = true
+            soundButton.setImage(#imageLiteral(resourceName: "sound"), for: .normal)
+        }
     }
     
     var pauseXib : myView? = nil
@@ -40,6 +53,7 @@ class GameController: UIViewController {
         darkView.isHidden = false
         pauseXib  = myView(frame: CGRect(x: 0 + (view.bounds.width - 340) / 2 , y: 0 + (view.bounds.height - 280) / 2, width: 340, height: 280))
         pauseXib?.continueButton.addTarget(self, action: #selector(xibContinueTapped), for: UIControlEvents.touchUpInside)
+        pauseXib?.exitButton.addTarget(self, action: #selector(xibExitTapped), for: UIControlEvents.touchUpInside)
         view.addSubview(pauseXib!)
         timer2.invalidate()
         timer.invalidate()
@@ -48,6 +62,13 @@ class GameController: UIViewController {
     func xibContinueTapped(sender : UIButton){
         hidePause()
         darkView.isHidden = true
+    }
+    
+    func xibExitTapped(sender : UIButton){
+        EndFlag = true
+        levelTimeDefault = 60
+        let VC = storyboard?.instantiateViewController(withIdentifier: "main") as? MainMenuViewController
+        present(VC!, animated: true, completion: nil);
     }
     
     private func hidePause() {
@@ -104,6 +125,11 @@ class GameController: UIViewController {
         if gameType == "mistake" {
             apLabel.alpha = 0
         }
+        if AppSound == true {
+            soundButton.setImage(#imageLiteral(resourceName: "sound"), for: .normal)
+        } else {
+            soundButton.setImage(#imageLiteral(resourceName: "nosound"), for: .normal)
+        }
         view.addSubview(darkView)
         darkView.isHidden = true;
         imageRight.alpha = 0
@@ -140,7 +166,9 @@ class GameController: UIViewController {
             switch gestOpt.direction {
             case UISwipeGestureRecognizerDirection.right :
                 if imageRight.alpha == 1{
-                    AudioServicesPlaySystemSound(SystemSoundID(1109))
+                    if AppSound {
+                        AudioServicesPlaySystemSound(SystemSoundID(1109))
+                    }
                     myLab.text = String(Int(myLab.text!)! + 1)}
                 else if gameType == "mistake" {
                     if imageRight.alpha == 0 {
@@ -149,7 +177,9 @@ class GameController: UIViewController {
                 }
             case UISwipeGestureRecognizerDirection.left :
                 if imageLeft.alpha == 1{
-                    AudioServicesPlaySystemSound(SystemSoundID(1109))
+                    if AppSound {
+                        AudioServicesPlaySystemSound(SystemSoundID(1109))
+                    }
                     myLab.text = String(Int(myLab.text!)! + 1)}
                 else if gameType == "mistake" {
                     if imageLeft.alpha == 0 {
@@ -158,7 +188,9 @@ class GameController: UIViewController {
                 }
             case UISwipeGestureRecognizerDirection.up :
                 if imageUp.alpha == 1{
-                    AudioServicesPlaySystemSound(SystemSoundID(1109))
+                    if AppSound {
+                        AudioServicesPlaySystemSound(SystemSoundID(1109))
+                    }
                     myLab.text = String(Int(myLab.text!)! + 1)}
             else if gameType == "mistake" {
                 if imageUp.alpha == 0 {
@@ -167,7 +199,9 @@ class GameController: UIViewController {
             }
             case UISwipeGestureRecognizerDirection.down :
                 if imageDown.alpha == 1{
-                    AudioServicesPlaySystemSound(SystemSoundID(1109))
+                    if AppSound {
+                        AudioServicesPlaySystemSound(SystemSoundID(1109))
+                      }
                     myLab.text = String(Int(myLab.text!)! + 1)}
             else if gameType == "mistake" {
                 if imageDown.alpha == 0 {

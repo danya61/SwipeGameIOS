@@ -9,6 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="myView" customModule="GestureGameApp" customModuleProvider="target">
             <connections>
                 <outlet property="continueButton" destination="Bc4-pM-GBb" id="T7x-4v-w7L"/>
+                <outlet property="exitButton" destination="4eP-mu-Nhm" id="82C-uc-J4G"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
