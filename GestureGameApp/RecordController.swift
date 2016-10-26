@@ -32,11 +32,13 @@ class RecordController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         str.image = UIImage(named: "rightst")
         self.str.center.x -= self.str.frame.width
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         UIView.animate(withDuration: 1, delay: 0.6, options: .repeat, animations: {
             self.str.center.x += self.str.frame.width
             }, completion: nil)

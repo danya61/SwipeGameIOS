@@ -42,7 +42,7 @@
                         <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause.png" translatesAutoresizingMaskIntoConstraints="NO" id="itg-Qq-nlf">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause" translatesAutoresizingMaskIntoConstraints="NO" id="itg-Qq-nlf">
                     <constraints>
                         <constraint firstAttribute="height" constant="147" id="NR3-vd-OMn"/>
                         <constraint firstAttribute="width" constant="170" id="hvo-Us-xJs"/>
@@ -70,6 +70,6 @@
     </objects>
     <resources>
         <image name="AppIcon" width="57" height="57"/>
-        <image name="pause.png" width="128" height="128"/>
+        <image name="pause" width="43" height="43"/>
     </resources>
 </document>

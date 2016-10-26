@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0411E5211DAB915200818BD1 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411E5201DAB915200818BD1 /* pause.png */; };
 		041B4ADA1DA4F9D700CE5265 /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B4AD91DA4F9D700CE5265 /* RecordController.swift */; };
 		041B4ADC1DA55DF600CE5265 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B4ADB1DA55DF600CE5265 /* PopoverController.swift */; };
 		041E1A651DBEAC8F00A5F0D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E1A641DBEAC8F00A5F0D8 /* SettingsViewController.swift */; };
@@ -30,7 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0411E5201DAB915200818BD1 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		041B4AD91DA4F9D700CE5265 /* RecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
 		041B4ADB1DA55DF600CE5265 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		041E1A641DBEAC8F00A5F0D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		042110291D92B3A400C75071 /* pics */ = {
 			isa = PBXGroup;
 			children = (
-				0411E5201DAB915200818BD1 /* pause.png */,
 				04D9317A1DA7B7E4004450A1 /* backgr.jpg */,
 				0421102A1D92B69300C75071 /* ust.png */,
 				0421102B1D92B69300C75071 /* downst.png */,
@@ -199,7 +196,6 @@
 				0421102E1D92B69300C75071 /* ust.png in Resources */,
 				04D9317B1DA7B7E4004450A1 /* backgr.jpg in Resources */,
 				042110311D92B69300C75071 /* rightst.png in Resources */,
-				0411E5211DAB915200818BD1 /* pause.png in Resources */,
 				0421101B1D92919200C75071 /* Main.storyboard in Resources */,
 				0421102F1D92B69300C75071 /* downst.png in Resources */,
 				042110301D92B69300C75071 /* leftst.png in Resources */,
