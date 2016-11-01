@@ -29,7 +29,6 @@ class GameController: UIViewController {
     
     @IBOutlet weak var soundButton: UIButton!
     
-    @IBOutlet weak var apLabel: UILabel!
     var gameType : String = ""
     
     @IBAction func yesAnswer(sender: UIStoryboardSegue) {
@@ -80,15 +79,18 @@ class GameController: UIViewController {
             BeginForNSec("Up")
         } else if imageDown.alpha == 1 {
             BeginForNSec("Down")
-        } else {
+        } else if imageLeft.alpha == 1 {
             BeginForNSec("Left")
+        } else {
+            BeginForNSec("Tap")
         }
+        
         if gameType == "time"{
             mainTimer()
         }
     }
     
-    let sides = ["Left", "Right", "Up", "Down"]
+    let sides = ["Left", "Right", "Up", "Down", "Tap"]
     var timer = Timer()
     var timer2 = Timer()
     
@@ -96,6 +98,7 @@ class GameController: UIViewController {
     @IBOutlet weak var imageUp: UIImageView!
     @IBOutlet weak var imageRight: UIImageView!
     @IBOutlet weak var imageLeft: UIImageView!
+    @IBOutlet weak var imageTap: UIImageView!
     
     
     @IBOutlet weak var myLab: UILabel!
@@ -107,6 +110,8 @@ class GameController: UIViewController {
         gest.direction = .right
         self.view.addGestureRecognizer(gest)
         
+        let gest1 = UITapGestureRecognizer(target: self, action: #selector(GameController.DidSwipeIt(_:)))
+        self.view.addGestureRecognizer(gest1)
         
         let gest2 = UISwipeGestureRecognizer(target: self, action: #selector(GameController.DidSwipeIt(_:)))
         gest2.direction = .left
@@ -122,9 +127,6 @@ class GameController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if gameType == "mistake" {
-            apLabel.alpha = 0
-        }
         if AppSound == true {
             soundButton.setImage(#imageLiteral(resourceName: "sound"), for: .normal)
         } else {
@@ -136,13 +138,14 @@ class GameController: UIViewController {
         imageUp.alpha = 0
         imageDown.alpha = 0
         imageLeft.alpha = 0
+        imageTap.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         myLab.text = "0"
         if gameType == "time" {
-            timeLabel.text = "\(levelTimeDefault)"
+            timeLabel.text = "\(levelTimeDefault) ''"
             mainTimer()
         }
         BeginForNSec()
@@ -151,7 +154,7 @@ class GameController: UIViewController {
     //timer2  -  отвечает за так называемый секундомер вверху
     func mainTimer(){
         if (levelTimeDefault > 0){
-            timeLabel.text = String(levelTimeDefault)
+            timeLabel.text = String(levelTimeDefault) +  " ''"
             timer2.invalidate()
             timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameController.mainTimer), userInfo: nil, repeats: false)
             levelTimeDefault -= 1
@@ -212,6 +215,21 @@ class GameController: UIViewController {
                 break
             }
         }
+        
+        else if gest is UITapGestureRecognizer{
+            if imageTap.alpha == 1{
+                if AppSound {
+                    AudioServicesPlaySystemSound(SystemSoundID(1109))
+                }
+                myLab.text = String(Int(myLab.text!)! + 1)}
+            else if gameType == "mistake" {
+                if imageTap.alpha == 0 {
+                    ifAlphaZeroMistakePress()
+                }
+            }
+
+        }
+        
     }
     
     func ifAlphaZeroMistakePress(){
@@ -250,6 +268,9 @@ class GameController: UIViewController {
         case "Down" :
             imageDown.image = UIImage(named: "downst")
             imageDown.alpha = 1
+        case "Tap" :
+            imageTap.image = UIImage(named: "tap")
+            imageTap.alpha = 1
         default : break
         }
     }
@@ -260,7 +281,7 @@ class GameController: UIViewController {
             let timeSec = Float.random(0.33, upper: 1.0)
             var nameOfStr = "";
             if nameStr == "null"{
-                nameOfStr = sides[Int(arc4random_uniform(4))]
+                nameOfStr = sides[Int(arc4random_uniform(5))]
             } else {
                 nameOfStr = nameStr
             }
@@ -309,6 +330,9 @@ class GameController: UIViewController {
                 BeginForNSec()
             case "Left" :
                 imageLeft.alpha = 0
+                BeginForNSec()
+            case "Tap" :
+                imageTap.alpha = 0
                 BeginForNSec()
             default : break
                 

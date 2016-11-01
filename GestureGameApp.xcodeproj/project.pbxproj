@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041284E71DC3F052002635C5 /* tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 041284E61DC3F052002635C5 /* tap.png */; };
 		041B4ADA1DA4F9D700CE5265 /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B4AD91DA4F9D700CE5265 /* RecordController.swift */; };
 		041B4ADC1DA55DF600CE5265 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B4ADB1DA55DF600CE5265 /* PopoverController.swift */; };
 		041E1A651DBEAC8F00A5F0D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E1A641DBEAC8F00A5F0D8 /* SettingsViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041284E61DC3F052002635C5 /* tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tap.png; sourceTree = "<group>"; };
 		041B4AD91DA4F9D700CE5265 /* RecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
 		041B4ADB1DA55DF600CE5265 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		041E1A641DBEAC8F00A5F0D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -97,9 +99,10 @@
 		042110291D92B3A400C75071 /* pics */ = {
 			isa = PBXGroup;
 			children = (
+				041284E61DC3F052002635C5 /* tap.png */,
 				04D9317A1DA7B7E4004450A1 /* backgr.jpg */,
-				0421102A1D92B69300C75071 /* ust.png */,
 				0421102B1D92B69300C75071 /* downst.png */,
+				0421102A1D92B69300C75071 /* ust.png */,
 				0421102C1D92B69300C75071 /* leftst.png */,
 				0421102D1D92B69300C75071 /* rightst.png */,
 			);
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				043F507A1DAEF1B90088DB6E /* myView.xib in Resources */,
+				041284E71DC3F052002635C5 /* tap.png in Resources */,
 				042110201D92919200C75071 /* LaunchScreen.storyboard in Resources */,
 				0421101D1D92919200C75071 /* Assets.xcassets in Resources */,
 				0421102E1D92B69300C75071 /* ust.png in Resources */,
