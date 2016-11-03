@@ -21,6 +21,7 @@ class myView: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
         setup()
+       // view.frame = frame
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,6 +43,7 @@ class myView: UIView {
     
     func setup() {
         view = loadFromNib()
+        //let sz = CGRect(x: 0, y: 0, width: 150, height: 150)
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)

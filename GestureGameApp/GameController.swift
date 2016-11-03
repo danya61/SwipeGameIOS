@@ -50,7 +50,7 @@ class GameController: UIViewController {
     
     @IBAction func pausePressed(_ sender: AnyObject) {
         darkView.isHidden = false
-        pauseXib  = myView(frame: CGRect(x: 0 + (view.bounds.width - 340) / 2 , y: 0 + (view.bounds.height - 280) / 2, width: 340, height: 280))
+        pauseXib  = myView(frame: CGRect(x: 0 + (view.bounds.width - 340) / 2 , y: 0 + (view.bounds.height - 280) / 2, width: 320, height: 270))
         pauseXib?.continueButton.addTarget(self, action: #selector(xibContinueTapped), for: UIControlEvents.touchUpInside)
         pauseXib?.exitButton.addTarget(self, action: #selector(xibExitTapped), for: UIControlEvents.touchUpInside)
         view.addSubview(pauseXib!)
@@ -165,7 +165,8 @@ class GameController: UIViewController {
     
     
     func DidSwipeIt(_ gest : UIGestureRecognizer){
-        if let gestOpt = gest as? UISwipeGestureRecognizer{
+        if (darkView.isHidden) {
+          if let gestOpt = gest as? UISwipeGestureRecognizer{
             switch gestOpt.direction {
             case UISwipeGestureRecognizerDirection.right :
                 if imageRight.alpha == 1{
@@ -229,7 +230,7 @@ class GameController: UIViewController {
             }
 
         }
-        
+      }
     }
     
     func ifAlphaZeroMistakePress(){
